@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using Autofac.Extras.NLog;
 using Panteon.HelloTask.Configuration;
 using Panteon.Sdk;
