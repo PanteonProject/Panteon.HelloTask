@@ -58,6 +58,22 @@
       <HintPath>..\packages\NLog.4.0.1\lib\net45\NLog.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Panteon.Realtime.Pusher, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Panteon.Realtime.Pusher.1.0.0\lib\net451\Panteon.Realtime.Pusher.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Panteon.Sdk, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Panteon.Sdk.1.0.1\lib\net451\Panteon.Sdk.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PusherServer, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\PusherServer.2.1.1.0\lib\net35\PusherServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.0.1\lib\net4\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Schtick, Version=1.0.3.9, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Schtick.1.0.3\lib\net45\Schtick.dll</HintPath>
       <Private>True</Private>
