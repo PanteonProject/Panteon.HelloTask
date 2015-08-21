@@ -107,7 +107,6 @@
     <Compile Include="Configuration\HelloTaskSettings.cs" />
     <Compile Include="Exports.cs" />
     <Compile Include="HelloTask.cs" />
-    <Compile Include="TaskModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
