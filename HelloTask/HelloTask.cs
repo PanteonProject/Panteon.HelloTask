@@ -16,7 +16,7 @@ namespace Panteon.HelloTask
 
         public override string Name => "My-Hello-Task";
 
-        public override bool Bootstrap(bool autoRun)
+        public override bool Init(bool autoRun)
         {
             return Run((task, offset) => DoSomething());
         }
