@@ -62,8 +62,8 @@
       <HintPath>..\packages\Panteon.Realtime.Pusher.1.0.0\lib\net451\Panteon.Realtime.Pusher.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Panteon.Sdk, Version=1.0.4.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Panteon.Sdk.1.0.4\lib\net451\Panteon.Sdk.dll</HintPath>
+    <Reference Include="Panteon.Sdk, Version=1.0.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Panteon.Sdk.1.0.6\lib\net451\Panteon.Sdk.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PusherServer, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -113,15 +113,12 @@
     <None Include="App.config">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="config.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Sdk\Panteon.csproj">
-      <Project>{215B4428-DA56-4E12-801A-3959F6D0B28B}</Project>
-      <Name>Panteon</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

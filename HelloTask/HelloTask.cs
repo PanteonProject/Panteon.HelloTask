@@ -7,7 +7,7 @@ using Panteon.Sdk.Realtime;
 
 namespace Panteon.HelloTask
 {
-    public class HelloTask : PanteonRealtimeTask, IDisposable
+    public class HelloTask : RealtimePanteonWorker, IDisposable
     {
         public HelloTask(ILogger logger, IHelloTaskSettings taskSettings, IPubSubClient pubSubClient)
             : base(logger, taskSettings, pubSubClient)

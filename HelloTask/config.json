@@ -1,0 +1,9 @@
+﻿{
+    "Name": "Hello Worker",
+    "Enabled": true,
+    "TestMode": false,
+    "PollIntervalSeconds": 10,
+    "RedisConnectionString": "localhost:6379",
+    "SchedulePattern": "min(*)",
+    "DbNo": -1
+}

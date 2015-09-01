@@ -4,6 +4,7 @@ using Autofac.Extras.NLog;
 using Panteon.HelloTask.Configuration;
 using Panteon.Realtime.Pusher;
 using Panteon.Sdk;
+using Panteon.Sdk.IO;
 using Panteon.Sdk.Realtime;
 using Panteon.Sdk.Utils;
 
@@ -18,17 +19,27 @@ namespace Panteon.HelloTask
             {
                 var builder = new ContainerBuilder();
 
-                builder.RegisterModule<CoreModule>();
-
-                builder.RegisterType<EnvironmentWrapper>().As<IEnvironmentWrapper>().SingleInstance();
+                builder.RegisterModule<WorkerModule>();
 
                 builder.RegisterType<JsonNetSerializer>().As<IJsonSerializer>().SingleInstance();
 
                 builder.RegisterType<PubSubClient>().As<IPubSubClient>().SingleInstance();
 
-                builder.Register(context => new HelloTaskConfigProvider(context.Resolve<ILogger>()).ParseSettings()).AsImplementedInterfaces().SingleInstance();
+                builder.RegisterType<FileSystem>().As<IFileSystem>().SingleInstance();
+                builder.RegisterType<FileReader>().As<IFileReader>().SingleInstance();
 
-                builder.RegisterType<HelloTask>().As<IPanteonTask>();
+                builder.Register(
+                    context =>
+                        new HelloTaskConfigProvider(
+                            context.Resolve<ILogger>(),
+                            context.Resolve<IJsonSerializer>(),
+                            context.Resolve<IFileReader>()
+                            )
+                            .ParseSettings()
+                    ).AsImplementedInterfaces()
+                    .SingleInstance();
+
+                builder.RegisterType<HelloTask>().As<IPanteonWorker>();
 
                 return builder;
             }

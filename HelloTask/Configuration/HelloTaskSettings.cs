@@ -2,7 +2,7 @@
 
 namespace Panteon.HelloTask.Configuration
 {
-    public class HelloTaskSettings : TaskSettingsBase, IHelloTaskSettings
+    public class HelloTaskSettings : WorkerSettingsBase, IHelloTaskSettings
     {
         public int PollIntervalSeconds { get; set; }
     }
