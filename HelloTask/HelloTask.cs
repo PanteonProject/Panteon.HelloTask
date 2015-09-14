@@ -14,7 +14,10 @@ namespace Panteon.HelloTask
         {
         }
 
-        public override string Name => "My-Hello-Task";
+        public override string Name
+        {
+            get { return "My-Hello-Task"; }
+        }
 
         public override bool Init(bool autoRun)
         {
@@ -23,7 +26,7 @@ namespace Panteon.HelloTask
 
         private void DoSomething()
         {
-            string message = $"{Name} Hello {DateTime.Now}";
+            string message = string.Format("{0} Hello {1}", Name, DateTime.Now);
 
             for (int i = 0; i < 1000000; i++)
             {
