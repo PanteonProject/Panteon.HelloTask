@@ -13,7 +13,7 @@ namespace Panteon.HelloTask.Configuration
         private readonly IFileReader _fileReader;
 
         public HelloTaskConfigProvider(ILogger logger, IJsonSerializer jsonSerializer, IFileReader fileReader)
-            : base(logger,jsonSerializer,fileReader)
+            : base(logger, jsonSerializer, fileReader)
         {
             _jsonSerializer = jsonSerializer;
             _fileReader = fileReader;
@@ -21,7 +21,20 @@ namespace Panteon.HelloTask.Configuration
 
         public override HelloTaskSettings ParseSettings(string configFilePath = null)
         {
-            string directoryName = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            var executingAssembly = Assembly.GetExecutingAssembly();
+
+            var originalJobFolder = Path.GetDirectoryName(executingAssembly.CodeBase);
+
+            if (!string.IsNullOrEmpty(originalJobFolder))
+            {
+                string combine = Path.Combine(originalJobFolder, "config.json");
+                if (File.Exists(combine))
+                {
+                    return _jsonSerializer.Deserialize<HelloTaskSettings>(_fileReader.ReadFileContent(combine).Content);
+                }
+            }
+
+            string directoryName = Path.GetDirectoryName(executingAssembly.Location);
             if (!string.IsNullOrEmpty(directoryName))
                 configFilePath = configFilePath ?? Path.Combine(directoryName, "config.json");
 
