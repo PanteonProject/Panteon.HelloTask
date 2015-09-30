@@ -27,7 +27,7 @@ namespace Panteon.HelloTask.Configuration
 
             if (!string.IsNullOrEmpty(originalJobFolder))
             {
-                string combine = Path.Combine(originalJobFolder, "config.json");
+                string combine = Path.Combine(originalJobFolder.Replace("file:\\", ""), "config.json");
                 if (File.Exists(combine))
                 {
                     return _jsonSerializer.Deserialize<HelloTaskSettings>(_fileReader.ReadFileContent(combine).Content);
