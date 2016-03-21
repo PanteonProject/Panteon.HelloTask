@@ -1,16 +1,17 @@
 ﻿using System;
 using Autofac.Extras.NLog;
-using Panteon.HelloTask.Configuration;
+using Panteon.SampleRealtimeTask.Configuration;
 using Panteon.Sdk;
+using Panteon.Sdk.History;
 using Panteon.Sdk.Models;
 using Panteon.Sdk.Realtime;
 
-namespace Panteon.HelloTask
+namespace Panteon.SampleRealtimeTask
 {
-    public class HelloTask : RealtimePanteonWorker, IDisposable
+    public class HelloRealtimeTask : RealtimePanteonWorker, IDisposable
     {
-        public HelloTask(ILogger logger, IHelloTaskSettings taskSettings, IPubSubClient pubSubClient)
-            : base(logger, taskSettings, pubSubClient)
+        public HelloRealtimeTask(ILogger logger, IHelloTaskSettings taskSettings, IPubSubClient pubSubClient, IHistoryStorage storage)
+            : base(logger, taskSettings, pubSubClient, storage)
         {
         }
 
@@ -35,6 +36,7 @@ namespace Panteon.HelloTask
                 if (i % 100000 == 0)
                 {
                     Progress(new ProgressMessage { Message = message, Percent = 10m * tmp });
+                    WorkerLogger.Info(message);
                 }
             }
 

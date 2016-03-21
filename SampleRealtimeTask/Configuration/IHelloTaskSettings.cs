@@ -1,6 +1,6 @@
 ﻿using Panteon.Sdk.Configuration;
 
-namespace Panteon.HelloTask.Configuration
+namespace Panteon.SampleRealtimeTask.Configuration
 {
     public interface IHelloTaskSettings : IWorkerSettings
     {

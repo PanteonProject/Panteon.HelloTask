@@ -7,8 +7,8 @@
     <ProjectGuid>{E08559E6-6749-4178-9DA8-DB246C48686C}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Panteon.HelloTask</RootNamespace>
-    <AssemblyName>Panteon.HelloTask</AssemblyName>
+    <RootNamespace>Panteon.SampleRealtimeTask</RootNamespace>
+    <AssemblyName>Panteon.SampleRealtimeTask</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SccProjectName>SAK</SccProjectName>
@@ -63,8 +63,8 @@
       <HintPath>..\packages\Panteon.Realtime.Pusher.1.0.0\lib\net451\Panteon.Realtime.Pusher.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Panteon.Sdk, Version=1.0.8.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Panteon.Sdk.1.0.8\lib\net451\Panteon.Sdk.dll</HintPath>
+    <Reference Include="Panteon.Sdk, Version=1.1.0.3, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Panteon.Sdk.1.1.0.3\lib\net451\Panteon.Sdk.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="PusherServer, Version=2.1.1.0, Culture=neutral, processorArchitecture=MSIL">
@@ -107,7 +107,7 @@
     <Compile Include="Configuration\IHelloTaskSettings.cs" />
     <Compile Include="Configuration\HelloTaskSettings.cs" />
     <Compile Include="Exports.cs" />
-    <Compile Include="HelloTask.cs" />
+    <Compile Include="HelloRealtimeTask.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +116,9 @@
     </None>
     <None Include="config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="NLog.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>

@@ -5,7 +5,7 @@ using Panteon.Sdk.Configuration;
 using Panteon.Sdk.IO;
 using Panteon.Sdk.Utils;
 
-namespace Panteon.HelloTask.Configuration
+namespace Panteon.SampleRealtimeTask.Configuration
 {
     public class HelloTaskConfigProvider : TaskConfigProviderBase<HelloTaskSettings>
     {
